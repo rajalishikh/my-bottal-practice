@@ -1,20 +1,25 @@
 const getStoreCart = () => {
-    const storeCartString = localStorage.getItem('cart');
-    if (storeCartString) {
-        return JSON.parse(storeCartString);
+    const storeCardString = localStorage.getItem('cart')
+    if (storeCardString) {
+        return JSON.parse(storeCardString)
     }
     return [];
 }
+// here is the function of save the data 
 
-const saveCard = cart => {
-    const saveCardString = JSON.stringify(cart)
-    localStorage.setItem('cart', saveCardString);
+const saveData = cart2 => {
+    const saveDataString = JSON.stringify(cart2);
+    localStorage.setItem('cart', saveDataString);
+    
 }
+// add the data 
+const addLs = (id) => {
+    const addData = getStoreCart()
+    addData.push(id);
+    // save the data 
+    saveData(addData);
 
-const addL = (id) => {
-    const addLocalStorage = getStoreCart();
-    addLocalStorage.push(id);
-    // save the cart 
-    saveCard(addLocalStorage);
+
 }
-export { addL };
+export { addLs };
+     

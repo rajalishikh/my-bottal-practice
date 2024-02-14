@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+
+
+import { addLs } from "../../utility/getstorecart";
 import Bottle from "../bottles/Bottle";
 import './Header.css';
 
@@ -18,6 +21,9 @@ const Header = () => {
         console.log(bottleNumber)
         const newCart = [...bottalN, bottleNumber];
         setBottleN(newCart)
+        addLs(bottleNumber.id)
+      
+       
        
         
     }
