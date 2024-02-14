@@ -21,5 +21,5 @@ const addLs = (id) => {
 
 
 }
-export { addLs };
+export { addLs, getStoreCart };
      

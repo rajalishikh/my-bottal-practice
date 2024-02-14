@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-import { addLs } from "../../utility/getstorecart";
+import { addLs, getStoreCart } from "../../utility/getstorecart";
 import Bottle from "../bottles/Bottle";
 import './Header.css';
 
@@ -16,6 +16,17 @@ const Header = () => {
             .then(data => setBottle(data))
         
     }, [])
+
+    // load data from cart 
+    useEffect(() => {
+        console.log(bottle.length)
+        if (bottle.length) {
+            const loadData = getStoreCart();
+            console.log(loadData)
+            
+            
+        }
+    },[bottle])
      
     const handleClick = (bottleNumber) => {
         console.log(bottleNumber)
