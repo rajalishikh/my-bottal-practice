@@ -22,10 +22,25 @@ const Header = () => {
         console.log(bottle.length)
         if (bottle.length) {
             const loadData = getStoreCart();
-            console.log(loadData)
+            // console.log(loadData)
+            // console.log(bottle)
+            const saveCart = [];
+            console.log('save the cart', saveCart)
             
+            // running the loop in store data 
+            for (const id of loadData) {
+                console.log(id)
+                const BottalFind = bottle.find(item2 => item2.id === id);
+                if (BottalFind) {
+                    saveCart.push(BottalFind);
+                }
+
+            }
+            setBottleN(saveCart)
             
         }
+       
+        
     },[bottle])
      
     const handleClick = (bottleNumber) => {
