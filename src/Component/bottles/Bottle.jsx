@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Bottle.css';
 const Bottle = ({ bottle2,handleClickName }) => {
     
@@ -12,5 +13,9 @@ const Bottle = ({ bottle2,handleClickName }) => {
         </div>
     );
 };
-
+Bottle.propTypes = {
+    bottle2: PropTypes.object.isRequired,
+    handleClickName:PropTypes.func.isRequired
+    
+}
 export default Bottle;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 
 import { addLs, getStoreCart } from "../../utility/getstorecart";
+import Cart from "../Cart/Cart";
 import Bottle from "../bottles/Bottle";
 import './Header.css';
 
@@ -36,10 +37,10 @@ const Header = () => {
                 }
 
             }
-            setBottleN(saveCart)
             
+            setBottleN(saveCart)
         }
-       
+        
         
     },[bottle])
      
@@ -58,7 +59,8 @@ const Header = () => {
         <div className="">
             <h2>Here is my Bottle part </h2>
             <p>The total bottle of website {bottle.length}</p>
-            <p>newCart { bottalN.length}</p>
+            <Cart bottalN={bottalN}></Cart>
+            
             <div className=" bottle-container">
 
             {
